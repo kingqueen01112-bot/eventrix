@@ -14,6 +14,150 @@
     var ticketSelect = document.getElementById('ticketType');
     var progressBar  = document.getElementById('scrollProgress');
 
+    // ─── ARTIST DATA ────────────────────────────────────────
+    var artistData = {
+        'vegas-like-mike': {
+            name: 'VEGAS & LIKE MIKE',
+            genre: 'Rock',
+            badgeClass: 'badge-rock',
+            image: 'img/pexels-erxmart-2247677.jpg',
+            bio: 'Vegas & Like Mike have been defining rock music for over a decade. Known for their electrifying live performances and anthemic hits, this duo from Las Vegas brings an unmatched energy to every stage they touch. Their 2025 world tour sold out in minutes, cementing their status as rock icons.',
+            stage: 'Main Stage',
+            time: '9:00 PM',
+            day: 'Day 1 - Friday',
+            followers: '2.4M',
+            origin: 'Las Vegas, NV',
+            setlist: [
+                { song: 'Midnight Thunder', duration: '4:32' },
+                { song: 'Rise Up', duration: '3:58' },
+                { song: 'Electric Dreams', duration: '5:12' },
+                { song: 'Born to Rock', duration: '4:05' },
+                { song: 'Unstoppable', duration: '4:28' }
+            ],
+            social: { instagram: '@vegaslikemike', twitter: '@VegasLikeMike', spotify: 'vegaslikemike' }
+        },
+        'dj-thunder': {
+            name: 'DJ THUNDER',
+            genre: 'EDM',
+            badgeClass: 'badge-edm',
+            image: 'img/pexels-david-bartus-43782-844928.jpg',
+            bio: 'DJ Thunder is a master of electronic beats and crowd control. Rising from the underground scene in Berlin, he has become one of the most sought-after EDM artists worldwide. His signature sound combines bass-heavy drops with melodic progressions that create unforgettable moments on the dance floor.',
+            stage: 'Electronic Arena',
+            time: '11:00 PM',
+            day: 'Day 3 - Sunday',
+            followers: '1.8M',
+            origin: 'Berlin, Germany',
+            setlist: [
+                { song: 'Storm Rising', duration: '5:45' },
+                { song: 'Bass Cannon', duration: '4:20' },
+                { song: 'Neon Nights', duration: '6:00' },
+                { song: 'Drop It Low', duration: '4:15' },
+                { song: 'Thunderstruck 2026', duration: '5:30' }
+            ],
+            social: { instagram: '@djthundermusic', twitter: '@DJThunder', spotify: 'dj-thunder' }
+        },
+        'luna-waves': {
+            name: 'LUNA WAVES',
+            genre: 'Pop',
+            badgeClass: 'badge-pop',
+            image: 'img/aleksandr-popov-hTv8aaPziOQ-unsplash.jpg',
+            bio: 'Luna Waves captivates audiences with her ethereal voice and infectious pop melodies. After her viral breakthrough in 2023, Luna has become a festival favorite, blending pop, R&B, and electronic elements into a unique sonic experience that resonates with fans worldwide.',
+            stage: 'Main Stage',
+            time: '7:30 PM',
+            day: 'Day 1 - Friday',
+            followers: '3.2M',
+            origin: 'Los Angeles, CA',
+            setlist: [
+                { song: 'Moonlight Serenade', duration: '3:45' },
+                { song: 'Golden Hour', duration: '4:02' },
+                { song: 'Waves', duration: '3:55' },
+                { song: 'Starlight', duration: '4:15' },
+                { song: 'Dancing in the Dark', duration: '4:30' }
+            ],
+            social: { instagram: '@lunawavesmusic', twitter: '@LunaWaves', spotify: 'luna-waves' }
+        },
+        'mc-blaze': {
+            name: 'MC BLAZE',
+            genre: 'Hip Hop',
+            badgeClass: 'badge-hiphop',
+            image: 'img/junel-mujar-TpdyCbvJHFU-unsplash.jpg',
+            bio: 'MC Blaze is fire on the mic. Known for lightning-fast delivery and clever wordplay, this Brooklyn native has been turning heads in the hip-hop scene since 2021. His energetic performances and authentic lyrics have earned him a devoted following and critical acclaim.',
+            stage: 'Discovery Stage',
+            time: '5:00 PM',
+            day: 'Day 2 - Saturday',
+            followers: '890K',
+            origin: 'Brooklyn, NY',
+            setlist: [
+                { song: 'City Lights', duration: '3:30' },
+                { song: 'Blaze It', duration: '4:00' },
+                { song: 'Rise and Grind', duration: '3:45' },
+                { song: 'Flow State', duration: '4:20' },
+                { song: 'Top of the Game', duration: '4:10' }
+            ],
+            social: { instagram: '@mcblazeofficial', twitter: '@MC_Blaze', spotify: 'mc-blaze' }
+        },
+        'echo-saints': {
+            name: 'ECHO SAINTS',
+            genre: 'Rock',
+            badgeClass: 'badge-rock',
+            image: 'img/victor-rodvang-rbSpGv1wb5M-unsplash.jpg',
+            bio: 'Echo Saints bring a fresh take on alternative rock, blending grunge influences with modern production. Their atmospheric sound and introspective lyrics create a powerful emotional connection with audiences. Based in Seattle, they draw inspiration from the legendary rock scene while forging their own path.',
+            stage: 'Main Stage',
+            time: '4:00 PM',
+            day: 'Day 1 - Friday',
+            followers: '1.1M',
+            origin: 'Seattle, WA',
+            setlist: [
+                { song: 'Echoes', duration: '5:00' },
+                { song: 'Fade to Grey', duration: '4:30' },
+                { song: 'Hollow Ground', duration: '4:45' },
+                { song: 'Saints & Sinners', duration: '5:15' },
+                { song: 'Last Light', duration: '6:00' }
+            ],
+            social: { instagram: '@echosaintsband', twitter: '@EchoSaints', spotify: 'echo-saints' }
+        },
+        'neon-pulse': {
+            name: 'NEON PULSE',
+            genre: 'EDM',
+            badgeClass: 'badge-edm',
+            image: 'img/brock-wegner-bLUko-RjuFk-unsplash.jpg',
+            bio: 'Neon Pulse delivers high-octane electronic music that pushes the boundaries of the genre. Known for spectacular light shows and immersive productions, every Neon Pulse set is a multisensory experience. Their collaboration with top visual artists has set new standards for festival performances.',
+            stage: 'Electronic Arena',
+            time: '10:00 PM',
+            day: 'Day 2 - Saturday',
+            followers: '2.1M',
+            origin: 'Amsterdam, Netherlands',
+            setlist: [
+                { song: 'Neon Dreams', duration: '5:30' },
+                { song: 'Pulse', duration: '4:45' },
+                { song: 'Color Spectrum', duration: '6:00' },
+                { song: 'Digital Love', duration: '5:15' },
+                { song: 'Infinite', duration: '7:00' }
+            ],
+            social: { instagram: '@neonpulseedm', twitter: '@NeonPulseEDM', spotify: 'neon-pulse' }
+        },
+        'ava-strings': {
+            name: 'AVA STRINGS',
+            genre: 'Pop',
+            badgeClass: 'badge-pop',
+            image: 'img/kamil-feczko-r1UCyK3dIfI-unsplash.jpg',
+            bio: 'Ava Strings brings a unique acoustic-pop sound featuring virtuosic violin playing alongside her soulful vocals. Her innovative approach has earned her a special place in the festival circuit, offering intimate moments of musical brilliance in the Acoustic Tent.',
+            stage: 'Acoustic Tent',
+            time: '3:00 PM',
+            day: 'Day 2 - Saturday',
+            followers: '650K',
+            origin: 'Nashville, TN',
+            setlist: [
+                { song: 'Strings Attached', duration: '4:00' },
+                { song: 'Heartstrings', duration: '3:45' },
+                { song: 'Golden', duration: '4:15' },
+                { song: 'Whispered Melody', duration: '5:00' },
+                { song: 'Ava Maria', duration: '4:30' }
+            ],
+            social: { instagram: '@avastringsmusic', twitter: '@AvaStrings', spotify: 'ava-strings' }
+        }
+    };
+
 
     // ═══════════════════════════════════════════════════════
     //  1. PRELOADER
@@ -791,5 +935,254 @@
     // ═══════════════════════════════════════════════════════
     var yearEl = document.getElementById('copyrightYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+
+    // ═══════════════════════════════════════════════════════
+    //  24. VENUE MAP INTERACTION
+    // ═══════════════════════════════════════════════════════
+    var mapZones = document.querySelectorAll('.map-zone');
+    var mapTooltip = document.getElementById('mapTooltip');
+    var mapLegendItems = document.querySelectorAll('.map-legend-item');
+
+    if (mapZones.length > 0) {
+        mapZones.forEach(function(zone) {
+            zone.addEventListener('mouseenter', function(e) {
+                var zoneName = zone.getAttribute('data-name');
+                var zoneDesc = zone.getAttribute('data-desc');
+                
+                if (mapTooltip) {
+                    mapTooltip.querySelector('h4').textContent = zoneName;
+                    mapTooltip.querySelector('p').textContent = zoneDesc;
+                    mapTooltip.classList.add('visible');
+                }
+                
+                var zoneType = zone.getAttribute('data-zone');
+                mapLegendItems.forEach(function(item) {
+                    item.classList.toggle('active', item.getAttribute('data-zone') === zoneType);
+                });
+            });
+
+            zone.addEventListener('mousemove', function(e) {
+                if (mapTooltip) {
+                    var rect = zone.closest('.map-wrapper').getBoundingClientRect();
+                    var x = e.clientX - rect.left + 15;
+                    var y = e.clientY - rect.top - 10;
+                    
+                    if (x + 280 > rect.width) {
+                        x = x - 300;
+                    }
+                    if (y + 100 > rect.height) {
+                        y = y - 100;
+                    }
+                    
+                    mapTooltip.style.left = x + 'px';
+                    mapTooltip.style.top = y + 'px';
+                }
+            });
+
+            zone.addEventListener('mouseleave', function() {
+                if (mapTooltip) {
+                    mapTooltip.classList.remove('visible');
+                }
+                mapLegendItems.forEach(function(item) {
+                    item.classList.remove('active');
+                });
+            });
+
+            zone.addEventListener('click', function() {
+                var zoneType = zone.getAttribute('data-zone');
+                var targetSection = document.querySelector('#' + (zoneType === 'main-stage' ? 'schedule' : zoneType));
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        mapLegendItems.forEach(function(item) {
+            item.addEventListener('mouseenter', function() {
+                var zoneType = item.getAttribute('data-zone');
+                var zone = document.querySelector('.map-zone[data-zone="' + zoneType + '"]');
+                if (zone) {
+                    var zoneName = zone.getAttribute('data-name');
+                    var zoneDesc = zone.getAttribute('data-desc');
+                    if (mapTooltip) {
+                        mapTooltip.querySelector('h4').textContent = zoneName;
+                        mapTooltip.querySelector('p').textContent = zoneDesc;
+                        mapTooltip.classList.add('visible');
+                    }
+                    mapLegendItems.forEach(function(li) { li.classList.remove('active'); });
+                    item.classList.add('active');
+                }
+            });
+
+            item.addEventListener('mouseleave', function() {
+                if (mapTooltip) mapTooltip.classList.remove('visible');
+                mapLegendItems.forEach(function(li) { li.classList.remove('active'); });
+            });
+        });
+    }
+
+
+    // ═══════════════════════════════════════════════════════
+    //  25. ARTIST PROFILE MODALS
+    // ═══════════════════════════════════════════════════════
+    var artistCards = document.querySelectorAll('.artist-card[data-artist]');
+
+    artistCards.forEach(function(card) {
+        card.addEventListener('click', function() {
+            var artistId = card.getAttribute('data-artist');
+            var artist = artistData[artistId];
+            if (artist) {
+                showArtistModal(artist);
+            }
+        });
+
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var artistId = card.getAttribute('data-artist');
+                var artist = artistData[artistId];
+                if (artist) {
+                    showArtistModal(artist);
+                }
+            }
+        });
+    });
+
+    function showArtistModal(artist) {
+        var existingModal = document.querySelector('.artist-modal-overlay');
+        if (existingModal) existingModal.remove();
+
+        var setlistHtml = artist.setlist.map(function(item, index) {
+            return '<div class="setlist-item"><span class="song-name">' + (index + 1) + '. ' + item.song + '</span><span class="song-duration">' + item.duration + '</span></div>';
+        }).join('');
+
+        var socialHtml = '';
+        if (artist.social.instagram) {
+            socialHtml += '<a href="https://instagram.com/' + artist.social.instagram.replace('@', '') + '" target="_blank" class="artist-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>';
+        }
+        if (artist.social.twitter) {
+            socialHtml += '<a href="https://twitter.com/' + artist.social.twitter.replace('@', '') + '" target="_blank" class="artist-social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>';
+        }
+        if (artist.social.spotify) {
+            socialHtml += '<a href="https://open.spotify.com/artist/' + artist.social.spotify + '" target="_blank" class="artist-social-link" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>';
+        }
+
+        var modalHtml = 
+            '<div class="artist-modal-overlay">' +
+                '<div class="artist-modal">' +
+                    '<div class="artist-modal-header" style="background-image: url(\'' + artist.image + '\')">' +
+                        '<button class="artist-modal-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>' +
+                    '</div>' +
+                    '<div class="artist-modal-content">' +
+                        '<h2 class="artist-modal-name">' + artist.name + '</h2>' +
+                        '<div class="artist-modal-genre"><span class="genre-badge ' + artist.badgeClass + '">' + artist.genre + '</span></div>' +
+                        '<p class="artist-modal-bio">' + artist.bio + '</p>' +
+                        '<div class="artist-modal-details">' +
+                            '<div class="artist-detail-item">' +
+                                '<i class="fa-solid fa-tower-broadcast"></i>' +
+                                '<span class="detail-label">Stage</span>' +
+                                '<span class="detail-value">' + artist.stage + '</span>' +
+                            '</div>' +
+                            '<div class="artist-detail-item">' +
+                                '<i class="fa-solid fa-clock"></i>' +
+                                '<span class="detail-label">Performance</span>' +
+                                '<span class="detail-value">' + artist.day + ', ' + artist.time + '</span>' +
+                            '</div>' +
+                            '<div class="artist-detail-item">' +
+                                '<i class="fa-solid fa-users"></i>' +
+                                '<span class="detail-label">Followers</span>' +
+                                '<span class="detail-value">' + artist.followers + '</span>' +
+                            '</div>' +
+                            '<div class="artist-detail-item">' +
+                                '<i class="fa-solid fa-location-dot"></i>' +
+                                '<span class="detail-label">Origin</span>' +
+                                '<span class="detail-value">' + artist.origin + '</span>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="artist-modal-setlist">' +
+                            '<h4>SETLIST</h4>' +
+                            setlistHtml +
+                        '</div>' +
+                        '<div class="artist-modal-social">' +
+                            socialHtml +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        var modal = document.querySelector('.artist-modal-overlay');
+        
+        requestAnimationFrame(function() {
+            modal.classList.add('visible');
+        });
+
+        var closeBtn = modal.querySelector('.artist-modal-close');
+        closeBtn.addEventListener('click', function() {
+            closeArtistModal(modal);
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeArtistModal(modal);
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('visible')) {
+                closeArtistModal(modal);
+            }
+        });
+    }
+
+    function closeArtistModal(modal) {
+        modal.classList.remove('visible');
+        setTimeout(function() { modal.remove(); }, 400);
+    }
+
+
+    // ═══════════════════════════════════════════════════════
+    //  26. SOCIAL SHARING
+    // ═══════════════════════════════════════════════════════
+    var shareUrl = encodeURIComponent(window.location.href);
+    var shareTitle = encodeURIComponent('EVENTRIX 2026 - The Ultimate Music Festival Experience');
+    var shareDesc = encodeURIComponent('Join 50+ artists across 3 stages in New York City. June 20-22, 2026!');
+
+    function getShareUrl(platform) {
+        var urls = {
+            'twitter': 'https://twitter.com/intent/tweet?url=' + shareUrl + '&text=' + shareTitle + ' ' + shareDesc,
+            'facebook': 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl,
+            'whatsapp': 'https://wa.me/?text=' + shareTitle + ' ' + shareDesc + ' ' + shareUrl,
+            'linkedin': 'https://www.linkedin.com/shareArticle?mini=true&url=' + shareUrl + '&title=' + shareTitle + '&summary=' + shareDesc
+        };
+        return urls[platform] || '';
+    }
+
+    document.querySelectorAll('.share-btn, .share-btn-main').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var platform = btn.getAttribute('data-platform');
+            var url = getShareUrl(platform);
+            if (url) {
+                window.open(url, '_blank', 'width=600,height=400');
+            }
+        });
+    });
+
+    var copyBtn = document.getElementById('copyLinkBtn');
+    var shareLink = document.getElementById('shareLink');
+    if (copyBtn && shareLink) {
+        copyBtn.addEventListener('click', function() {
+            navigator.clipboard.writeText(shareLink.value).then(function() {
+                copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    }
 
 })();

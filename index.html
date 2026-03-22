@@ -45,6 +45,9 @@
                             <a href="#lineup" class="nav-link">Lineup</a>
                         </li>
                         <li class="nav-item">
+                            <a href="#venue-map" class="nav-link">Map</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="#schedule" class="nav-link">Schedule</a>
                         </li>
                         <li class="nav-item">
@@ -54,7 +57,12 @@
                             <a href="#register" class="nav-link">Contact</a>
                         </li>
                     </ul>
-                    <a href="#tickets" class="btn btn-glow ms-lg-3">Book Now</a>
+                    <div class="nav-social-links d-none d-lg-flex gap-2 me-3">
+                        <a href="#" class="share-btn" data-platform="twitter" aria-label="Share on Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="share-btn" data-platform="facebook" aria-label="Share on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="share-btn" data-platform="whatsapp" aria-label="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <a href="#tickets" class="btn btn-glow">Book Now</a>
                 </div>
             </div>
         </nav>
@@ -152,73 +160,87 @@
             <h2 class="section-title">2026 LINEUP</h2>
         </div>
         <div class="lineup-grid">
-            <div class="artist-card headliner" role="img" tabindex="0" aria-label="Vegas & Like Mike performing on stage"
+            <div class="artist-card headliner" role="button" tabindex="0" aria-label="Vegas & Like Mike - Click to view profile"
+            data-artist="vegas-like-mike"
             style="background-image: url('img/pexels-erxmart-2247677.jpg');">
                 <div class="card-gradient">
                     <div class="artist-info">
                         <h3>VEGAS &amp; LIKE MIKE</h3>
                         <span class="genre-badge badge-rock">Rock</span>
                         <p class="card-details">Main Stage • 9:00 PM</p>
+                        <span class="view-profile-hint"><i class="fa-solid fa-expand"></i> View Profile</span>
                     </div>
                 </div>
             </div>
-            <div class="artist-card" role="img" tabindex="0" aria-label="DJ Thunder performing"
+            <div class="artist-card" role="button" tabindex="0" aria-label="DJ Thunder - Click to view profile"
+            data-artist="dj-thunder"
             style="background-image: url('img/pexels-david-bartus-43782-844928.jpg');">
                 <div class="card-gradient">
                     <div class="artist-info">
-                        <h3>DJ Thunder</h3>
+                        <h3>DJ THUNDER</h3>
                         <span class="genre-badge badge-edm">EDM</span>
                         <p class="card-details">Electronic Arena • 11:00 PM</p>
+                        <span class="view-profile-hint"><i class="fa-solid fa-expand"></i> View Profile</span>
                     </div>
                 </div>
             </div>
-            <div class="artist-card" role="img" tabindex="0" aria-label="Luna Waves performing"
+            <div class="artist-card" role="button" tabindex="0" aria-label="Luna Waves - Click to view profile"
+            data-artist="luna-waves"
             style="background-image: url('img/aleksandr-popov-hTv8aaPziOQ-unsplash.jpg');">
                 <div class="card-gradient">
                     <div class="artist-info">
                         <h3>LUNA WAVES</h3>
                         <span class="genre-badge badge-pop">Pop</span>
                         <p class="card-details">Main Stage • 7:30 PM</p>
+                        <span class="view-profile-hint"><i class="fa-solid fa-expand"></i> View Profile</span>
                     </div>
                 </div>
             </div>
-            <div class="artist-card" role="img" tabindex="0" aria-label="MC Blaze performing"
+            <div class="artist-card" role="button" tabindex="0" aria-label="MC Blaze - Click to view profile"
+            data-artist="mc-blaze"
             style="background-image: url('img/junel-mujar-TpdyCbvJHFU-unsplash.jpg');">
                 <div class="card-gradient">
                     <div class="artist-info">
                         <h3>MC BLAZE</h3>
                         <span class="genre-badge badge-hiphop">Hip Hop</span>
                         <p class="card-details">Discovery Stage • 5:00 PM</p>
+                        <span class="view-profile-hint"><i class="fa-solid fa-expand"></i> View Profile</span>
                     </div>
                 </div>
             </div>
-            <div class="artist-card" role="img" tabindex="0" aria-label="Echo Saints performing"
+            <div class="artist-card" role="button" tabindex="0" aria-label="Echo Saints - Click to view profile"
+            data-artist="echo-saints"
             style="background-image: url('img/victor-rodvang-rbSpGv1wb5M-unsplash.jpg');">
                 <div class="card-gradient">
                     <div class="artist-info">
                         <h3>ECHO SAINTS</h3>
                         <span class="genre-badge badge-rock">Rock</span>
                         <p class="card-details">Main Stage • 4:00 PM</p>
+                        <span class="view-profile-hint"><i class="fa-solid fa-expand"></i> View Profile</span>
                     </div>
                 </div>
             </div>
-            <div class="artist-card" role="img" tabindex="0" aria-label="Neon Pulse performing"
+            <div class="artist-card" role="button" tabindex="0" aria-label="Neon Pulse - Click to view profile"
+            data-artist="neon-pulse"
             style="background-image: url('img/brock-wegner-bLUko-RjuFk-unsplash.jpg');">
                 <div class="card-gradient">
                     <div class="artist-info">
                         <h3>NEON PULSE</h3>
                         <span class="genre-badge badge-edm">EDM</span>
                         <p class="card-details">Electronic Arena • 10:00 PM</p>
+                        <span class="view-profile-hint"><i class="fa-solid fa-expand"></i> View Profile</span>
                     </div>
                 </div>
             </div>
-            <div class="artist-card" role="img" tabindex="0" aria-label="Ava Strings performing"
+            <div class="artist-card" role="button" tabindex="0" aria-label="Ava Strings - Click to view profile"
+            data-artist="ava-strings"
             style="background-image: url('img/kamil-feczko-r1UCyK3dIfI-unsplash.jpg');">
                 <div class="card-gradient">
                     <div class="artist-info">
                         <h3>AVA STRINGS</h3>
                         <span class="genre-badge badge-pop">Pop</span>
-                        <p class="card-details">Acoustic tent • 3:00 PM</p>
+                        <p class="card-details">Acoustic Tent • 3:00 PM</p>
+                        <span class="view-profile-hint"><i class="fa-solid fa-expand"></i> View Profile</span>
                     </div>
                 </div>
             </div>
@@ -325,6 +347,123 @@
             </div>
         </div>
     </section>
+    <section id="venue-map">
+        <div class="section-header">
+            <span class="section-label">FIND YOUR WAY</span>
+            <h2 class="section-title">VENUE MAP</h2>
+        </div>
+        <div class="map-container">
+            <div class="map-legend">
+                <div class="map-legend-item" data-zone="main-stage">
+                    <span class="map-legend-dot"></span>
+                    <span>Main Stage</span>
+                </div>
+                <div class="map-legend-item" data-zone="electronic">
+                    <span class="map-legend-dot"></span>
+                    <span>Electronic Arena</span>
+                </div>
+                <div class="map-legend-item" data-zone="discovery">
+                    <span class="map-legend-dot"></span>
+                    <span>Discovery Stage</span>
+                </div>
+                <div class="map-legend-item" data-zone="acoustic">
+                    <span class="map-legend-dot"></span>
+                    <span>Acoustic Tent</span>
+                </div>
+                <div class="map-legend-item" data-zone="food">
+                    <span class="map-legend-dot"></span>
+                    <span>Food Village</span>
+                </div>
+                <div class="map-legend-item" data-zone="camping">
+                    <span class="map-legend-dot"></span>
+                    <span>Camping Zone</span>
+                </div>
+                <div class="map-legend-item" data-zone="merch">
+                    <span class="map-legend-dot"></span>
+                    <span>Merch Store</span>
+                </div>
+                <div class="map-legend-item" data-zone="info">
+                    <span class="map-legend-dot"></span>
+                    <span>Info Booth</span>
+                </div>
+            </div>
+            <div class="map-wrapper">
+                <svg class="venue-svg" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1a1a2e"/>
+                            <stop offset="100%" style="stop-color:#0f0f1a"/>
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <rect x="0" y="0" width="800" height="500" fill="url(#groundGrad)" rx="20"/>
+                    <path d="M50 450 Q200 420 400 430 Q600 440 750 420" stroke="rgba(255,255,255,0.05)" stroke-width="60" fill="none"/>
+                    <path d="M100 100 L700 100 L720 150 L80 150 Z" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                    <text x="400" y="130" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="14" font-family="Inter">FESTIVAL GROUNDS</text>
+                    <g class="map-zone" data-zone="main-stage" data-name="Main Stage" data-desc="The heart of EVENTRIX featuring headline performances. Capacity: 15,000">
+                        <rect x="280" y="170" width="240" height="100" rx="10" fill="rgba(255,45,85,0.15)" stroke="#ff2d55" stroke-width="2"/>
+                        <rect x="380" y="220" width="40" height="50" fill="rgba(255,45,85,0.3)"/>
+                        <text x="400" y="195" text-anchor="middle" fill="#ff2d55" font-size="12" font-weight="bold" font-family="Inter">MAIN STAGE</text>
+                        <circle class="zone-pulse" cx="400" cy="220" r="8" fill="#ff2d55" filter="url(#glow)"/>
+                    </g>
+                    <g class="map-zone" data-zone="electronic" data-name="Electronic Arena" data-desc="High-energy electronic music experience with state-of-the-art visuals. Capacity: 8,000">
+                        <rect x="550" y="200" width="150" height="120" rx="10" fill="rgba(94,92,230,0.15)" stroke="#5e5ce6" stroke-width="2"/>
+                        <circle cx="625" cy="250" r="25" fill="rgba(94,92,230,0.3)"/>
+                        <text x="625" y="235" text-anchor="middle" fill="#5e5ce6" font-size="10" font-weight="bold" font-family="Inter">ELECTRONIC</text>
+                        <text x="625" y="247" text-anchor="middle" fill="#5e5ce6" font-size="10" font-weight="bold" font-family="Inter">ARENA</text>
+                        <circle class="zone-pulse" cx="625" cy="270" r="6" fill="#5e5ce6" filter="url(#glow)"/>
+                    </g>
+                    <g class="map-zone" data-zone="discovery" data-name="Discovery Stage" data-desc="Showcase for emerging artists and hidden gems. Capacity: 3,000">
+                        <rect x="100" y="200" width="130" height="100" rx="10" fill="rgba(255,149,0,0.15)" stroke="#ff9500" stroke-width="2"/>
+                        <polygon points="165,215 145,250 185,250" fill="rgba(255,149,0,0.4)"/>
+                        <text x="165" y="265" text-anchor="middle" fill="#ff9500" font-size="9" font-weight="bold" font-family="Inter">DISCOVERY</text>
+                        <circle class="zone-pulse" cx="165" cy="285" r="5" fill="#ff9500" filter="url(#glow)"/>
+                    </g>
+                    <g class="map-zone" data-zone="acoustic" data-name="Acoustic Tent" data-desc="Intimate acoustic performances in a cozy setting. Capacity: 1,500">
+                        <polygon points="100,340 180,340 200,380 80,380" fill="rgba(48,209,88,0.15)" stroke="#30d158" stroke-width="2"/>
+                        <text x="140" y="362" text-anchor="middle" fill="#30d158" font-size="9" font-weight="bold" font-family="Inter">ACOUSTIC</text>
+                        <circle class="zone-pulse" cx="140" cy="395" r="5" fill="#30d158" filter="url(#glow)"/>
+                    </g>
+                    <g class="map-zone" data-zone="food" data-name="Food Village" data-desc="50+ food vendors featuring cuisines from around the world. Open 12PM-2AM">
+                        <rect x="300" y="320" width="200" height="80" rx="10" fill="rgba(255,200,100,0.1)" stroke="rgba(255,200,100,0.4)" stroke-width="2"/>
+                        <text x="400" y="355" text-anchor="middle" fill="rgba(255,200,100,0.8)" font-size="11" font-weight="bold" font-family="Inter">FOOD VILLAGE</text>
+                        <text x="400" y="375" text-anchor="middle" fill="rgba(255,200,100,0.5)" font-size="9" font-family="Inter">50+ Vendors</text>
+                    </g>
+                    <g class="map-zone" data-zone="camping" data-name="Camping Zone" data-desc="On-site camping with premium and standard options. Showers & restrooms available 24/7">
+                        <rect x="550" y="370" width="200" height="100" rx="10" fill="rgba(100,200,100,0.1)" stroke="rgba(100,200,100,0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+                        <path d="M590 400 L610 370 L630 400" stroke="rgba(100,200,100,0.5)" stroke-width="1" fill="none"/>
+                        <path d="M650 400 L670 370 L690 400" stroke="rgba(100,200,100,0.5)" stroke-width="1" fill="none"/>
+                        <text x="650" y="420" text-anchor="middle" fill="rgba(100,200,100,0.7)" font-size="10" font-weight="bold" font-family="Inter">CAMPING ZONE</text>
+                    </g>
+                    <g class="map-zone" data-zone="merch" data-name="Merch Store" data-desc="Official EVENTRIX merchandise and artist collabs. Limited edition items available">
+                        <rect x="100" y="420" width="100" height="50" rx="8" fill="rgba(255,100,150,0.15)" stroke="rgba(255,100,150,0.4)" stroke-width="2"/>
+                        <text x="150" y="445" text-anchor="middle" fill="rgba(255,100,150,0.8)" font-size="9" font-weight="bold" font-family="Inter">MERCH</text>
+                        <text x="150" y="458" text-anchor="middle" fill="rgba(255,100,150,0.5)" font-size="8" font-family="Inter">STORE</text>
+                    </g>
+                    <g class="map-zone" data-zone="info" data-name="Info Booth" data-desc="Lost & found, general info, wristband exchanges. Open 24/7 during festival">
+                        <circle cx="720" y="80" r="25" fill="rgba(100,180,255,0.15)" stroke="rgba(100,180,255,0.4)" stroke-width="2"/>
+                        <text x="720" y="85" text-anchor="middle" fill="rgba(100,180,255,0.8)" font-size="10" font-weight="bold" font-family="Inter">i</text>
+                    </g>
+                    <g class="map-zone" data-zone="entry" data-name="Main Entrance" data-desc="Security checkpoints and ticket validation. Gates open at 12PM daily">
+                        <rect x="370" y="430" width="60" height="50" rx="5" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                        <text x="400" y="455" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8" font-family="Inter">ENTRANCE</text>
+                        <path d="M385 475 L400 465 L415 475" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+                    </g>
+                </svg>
+                <div class="map-tooltip" id="mapTooltip">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="experience">
         <div class="section-header">
             <span class="section-label">MORE THAN MUSIC</span>
@@ -434,6 +573,53 @@
             <button class="testimonial-btn testimonial-next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </section>
+    <section id="share-section">
+        <div class="section-header">
+            <span class="section-label">SPREAD THE WORD</span>
+            <h2 class="section-title">SHARE THE EXPERIENCE</h2>
+        </div>
+        <div class="share-container">
+            <div class="share-card">
+                <i class="fa-solid fa-share-nodes share-icon"></i>
+                <h3>Invite Your Friends</h3>
+                <p>Share EVENTRIX 2026 and let your friends experience the ultimate music festival. Together is better!</p>
+                <div class="share-buttons">
+                    <button class="share-btn-main" data-platform="twitter">
+                        <i class="fa-brands fa-x-twitter"></i> Twitter
+                    </button>
+                    <button class="share-btn-main" data-platform="facebook">
+                        <i class="fa-brands fa-facebook-f"></i> Facebook
+                    </button>
+                    <button class="share-btn-main" data-platform="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <button class="share-btn-main" data-platform="linkedin">
+                        <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                    </button>
+                </div>
+                <div class="share-link-copy">
+                    <input type="text" id="shareLink" readonly value="https://eventrix.festival/2026">
+                    <button id="copyLinkBtn" class="btn-copy">
+                        <i class="fa-solid fa-copy"></i> Copy
+                    </button>
+                </div>
+                <p class="referral-hint">Use code <strong>EVENTRIX26</strong> when registering to earn rewards!</p>
+            </div>
+            <div class="share-stats">
+                <div class="share-stat-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="share-stat-num" id="referralCount">2,847</span>
+                    <span class="share-stat-label">Referrals This Month</span>
+                </div>
+                <div class="share-stat-item">
+                    <i class="fa-solid fa-gift"></i>
+                    <span class="share-stat-num">$5</span>
+                    <span class="share-stat-label">Credit Per Referral</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="tickets">
         <div class="section-header">
             <span class="section-label">GET YOUR TICKETS</span>
