@@ -46,10 +46,14 @@
 
         // Smooth follower
         (function animateCursor() {
-            outlineX += (mouseX - outlineX) * 0.15;
-            outlineY += (mouseY - outlineY) * 0.15;
-            cursorOutline.style.left = outlineX + 'px';
-            cursorOutline.style.top  = outlineY + 'px';
+            var dx = mouseX - outlineX;
+            var dy = mouseY - outlineY;
+            if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+                outlineX += dx * 0.15;
+                outlineY += dy * 0.15;
+                cursorOutline.style.left = outlineX + 'px';
+                cursorOutline.style.top  = outlineY + 'px';
+            }
             requestAnimationFrame(animateCursor);
         })();
 
@@ -79,6 +83,7 @@
         var ctx = canvas.getContext('2d');
         var particles = [];
         var particleCount = 60;
+        var particleColorRGB = getComputedStyle(document.documentElement).getPropertyValue('--clr-primary-rgb').trim() || '255, 45, 85';
 
         function resizeCanvas() {
             canvas.width  = hero.offsetWidth;
@@ -106,7 +111,7 @@
         Particle.prototype.draw = function () {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(255, 45, 85, ' + this.opacity + ')';
+            ctx.fillStyle = 'rgba(' + particleColorRGB + ', ' + this.opacity + ')';
             ctx.fill();
         };
 
@@ -114,7 +119,14 @@
             particles.push(new Particle());
         }
 
+        var heroVisible = true;
+        var particleVisObserver = new IntersectionObserver(function (entries) {
+            heroVisible = entries[0].isIntersecting;
+        });
+        particleVisObserver.observe(hero);
+
         function animateParticles() {
+            if (!heroVisible) { requestAnimationFrame(animateParticles); return; }
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             particles.forEach(function (p) {
                 p.update();
@@ -126,10 +138,11 @@
                 for (var b = a + 1; b < particles.length; b++) {
                     var dx = particles[a].x - particles[b].x;
                     var dy = particles[a].y - particles[b].y;
-                    var dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 120) {
+                    var distSq = dx * dx + dy * dy;
+                    if (distSq < 14400) {
+                        var dist = Math.sqrt(distSq);
                         ctx.beginPath();
-                        ctx.strokeStyle = 'rgba(255, 45, 85, ' + (0.08 * (1 - dist / 120)) + ')';
+                        ctx.strokeStyle = 'rgba(' + particleColorRGB + ', ' + (0.08 * (1 - dist / 120)) + ')';
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(particles[a].x, particles[a].y);
                         ctx.lineTo(particles[b].x, particles[b].y);
@@ -236,7 +249,7 @@
     // ═══════════════════════════════════════════════════════
     //  7. COUNTDOWN TIMER
     // ═══════════════════════════════════════════════════════
-    var festivalDate = new Date('2026-06-20T12:00:00').getTime();
+    var festivalDate = new Date('2026-06-20T12:00:00-04:00').getTime();
 
     function updateCountdown() {
         var diff = festivalDate - Date.now();
@@ -294,9 +307,8 @@
 
     function animateCounters() {
         statNumbers.forEach(function (num) {
-            var target = parseInt(num.getAttribute('data-target'));
+            var target = parseInt(num.getAttribute('data-target'), 10);
             var duration = 2000;
-            var start = 0;
             var startTime = null;
 
             function step(timestamp) {
@@ -546,8 +558,8 @@
             lightbox.innerHTML =
                 '<div class="lightbox-content">' +
                     '<button class="lightbox-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>' +
-                    '<img src="' + url + '" alt="' + title + '">' +
-                    (title ? '<p class="lightbox-title">' + title + '</p>' : '') +
+                    '<img src="' + url + '" alt="' + escapeHtml(title) + '">' +
+                    (title ? '<p class="lightbox-title">' + escapeHtml(title) + '</p>' : '') +
                 '</div>';
 
             document.body.appendChild(lightbox);
@@ -557,6 +569,10 @@
             lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(lightbox); });
         });
     });
+
+    function escapeHtml(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
 
     function closeLightbox(lb) {
         lb.classList.remove('visible');

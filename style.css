@@ -407,7 +407,7 @@ textarea:focus-visible {
 .ticker-track {
     display: flex;
     white-space: nowrap;
-    animation: scrollTricker 25s linear infinite;
+    animation: scrollTicker 25s linear infinite;
 }
 
 .ticker-item {
@@ -419,7 +419,7 @@ textarea:focus-visible {
     letter-spacing: 0.5px;
 }
 
-@keyframes scrollTricker {
+@keyframes scrollTicker {
     from {
         transform: translateX(0);
     }
@@ -714,7 +714,7 @@ textarea:focus-visible {
     text-align: center;
     width: 320px;
     position: relative;
-    transition: all 0.4s var(--ease-out-expo);
+    transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
 }
 
 .pricing-card h3 {
@@ -922,16 +922,19 @@ textarea:focus-visible {
 }
 
 .sponsor-logo {
-    max-width: 120px;
-    opacity: 0.3;
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--text-primary);
+    opacity: 0.25;
     transition: all 0.4s var(--ease-out-expo);
-    filter: grayscale(100%);
+    padding: 8px 16px;
 }
 
 .sponsor-logo:hover {
-    opacity: 0.9;
-    filter: grayscale(0%);
+    opacity: 0.7;
     transform: scale(1.05);
+    color: var(--clr-primary);
 }
 
 footer {
@@ -1173,7 +1176,7 @@ footer a:hover {
         padding: 3px 10px;
     }
     .sponsor-logo {
-        max-width: 80px;
+        font-size: 16px;
     }
 }
 
@@ -1307,8 +1310,8 @@ footer a:hover {
     border-bottom-color: var(--border-subtle);
 }
 
-.nav-link.active {
-    color: var(--clr-primary) !important;
+.navbar .nav-link.active {
+    color: var(--clr-primary);
 }
 
 /* Countdown Timer */
@@ -1916,10 +1919,6 @@ footer a:hover {
 }
 
 /* Pricing card glow on hover */
-.pricing-card {
-    transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
-}
-
 .pricing-card::before {
     content: '';
     position: absolute;
