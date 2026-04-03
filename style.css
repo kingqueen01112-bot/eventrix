@@ -1669,16 +1669,24 @@ footer a:hover {
     line-height: 1.8;
 }
 
-/* Scroll Reveal */
-.reveal-on-scroll {
+/* ─── Framer Motion Initial States ─────── */
+.motion-ready .section-header,
+.motion-ready .artist-card,
+.motion-ready .mosaic-cell,
+.motion-ready .pricing-card,
+.motion-ready .stat-item,
+.motion-ready .faq-item,
+.motion-ready .testimonial-slider,
+.motion-ready .share-card,
+.motion-ready .share-stats,
+.motion-ready .register-form,
+.motion-ready .alert-info,
+.motion-ready .stage-legend,
+.motion-ready .day-selector,
+.motion-ready .map-container,
+.motion-ready .sponsor-logo,
+.motion-ready .footer-main .row > div {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
-}
-
-.reveal-on-scroll.revealed {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Back to Top */
